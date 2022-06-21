@@ -1,10 +1,12 @@
 package com.cemsarikaya.kotlinqrscannerapp
 
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -28,6 +30,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         cameraPermission()
         scanner()
+
+
+
+    }
+    fun sendButton(view:View){
+        intent = Intent(applicationContext, DetailsActivity::class.java)
+
+        intent.putExtra("QR_input", binding.qrTextView.text)
+        startActivity(intent)
+
+
 
 
     }
