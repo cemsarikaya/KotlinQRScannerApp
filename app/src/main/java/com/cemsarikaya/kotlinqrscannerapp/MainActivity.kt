@@ -30,18 +30,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         cameraPermission()
         scanner()
-
-
-
     }
     fun sendButton(view:View){
         intent = Intent(applicationContext, DetailsActivity::class.java)
 
         intent.putExtra("QR_input", binding.qrTextView.text)
         startActivity(intent)
-
-
-
 
     }
 
